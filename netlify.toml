@@ -1,0 +1,9 @@
+[build]
+  command = "yarn build"
+  functions = "built-lambda"
+
+[[redirects]]
+  from = "/nic/update"
+  to = "/.netlify/functions/noip"
+  status = 200
+  force = true

@@ -1,0 +1,24 @@
+{
+  "name": "ddns",
+  "version": "1.0.0",
+  "main": "built-lambda/index.js",
+  "repository": "git@github.com:victorjacobs/ddns.git",
+  "author": "Victor Jacobs <victor@vjcbs.dev>",
+  "license": "MIT",
+  "scripts": {
+    "build": "netlify-lambda build functions"
+  },
+  "dependencies": {
+    "node-fetch": "^2.6.1",
+    "parse-domain": "^3.0.2"
+  },
+  "devDependencies": {
+    "netlify-lambda": "^2.0.1"
+  },
+  "prettier": {
+    "trailingComma": "none",
+    "tabWidth": 2,
+    "semi": false,
+    "singleQuote": true
+  }
+}
