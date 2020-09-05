@@ -18,6 +18,8 @@ exports.handler = async (event, context) => {
 
     const zone = `${domain}.${topLevelDomains.join('.')}`
 
+    console.log(`Updating ${hostname} to ${ip}...`)
+
     const recordId = await fetch(
       `https://api.dnsimple.com/v2/${user}/zones/${zone}/records?name=${subDomains[0]}&type=A`,
       {
@@ -39,6 +41,7 @@ exports.handler = async (event, context) => {
       })
 
     if (recordId !== undefined) {
+      console.log(`Creating new record for ${hostname}...`)
       await fetch(
         `https://api.dnsimple.com/v2/${user}/zones/${zone}/records/${recordId}`,
         {
@@ -53,6 +56,7 @@ exports.handler = async (event, context) => {
         }
       )
     } else {
+      console.log(`Updating record for ${hostname}...`)
       await fetch(`https://api.dnsimple.com/v2/${user}/zones/${zone}/records`, {
         method: 'POST',
         body: JSON.stringify({
