@@ -1,5 +1,6 @@
 import fetch from 'node-fetch'
 import { parseDomain } from 'parse-domain'
+import 'encoding'
 
 exports.handler = async (event, context) => {
   try {
