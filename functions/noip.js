@@ -41,7 +41,7 @@ exports.handler = async (event, context) => {
       })
 
     if (recordId !== undefined) {
-      console.log(`Creating new record for ${hostname}...`)
+      console.log(`Updating record for ${hostname}...`)
       await fetch(
         `https://api.dnsimple.com/v2/${user}/zones/${zone}/records/${recordId}`,
         {
@@ -56,7 +56,7 @@ exports.handler = async (event, context) => {
         }
       )
     } else {
-      console.log(`Updating record for ${hostname}...`)
+      console.log(`Creating new record for ${hostname}...`)
       await fetch(`https://api.dnsimple.com/v2/${user}/zones/${zone}/records`, {
         method: 'POST',
         body: JSON.stringify({
