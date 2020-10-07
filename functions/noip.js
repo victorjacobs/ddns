@@ -62,7 +62,8 @@ exports.handler = async (event, context) => {
         body: JSON.stringify({
           name: subDomains[0],
           type: 'A',
-          content: ip
+          content: ip,
+          ttl: 60,
         }),
         headers: {
           Authorization: `Bearer ${password}`,
